@@ -91,16 +91,13 @@ We will review your code and provide feedback.
 
 
 Task 4: Debugging & Optimization Solution
-
 The query is slow when the employees table has over 1,000,000 rows.
 
 Possible Performance Issues:
-
-The most likely performance issue is that the status column is not indexed. When filtering a large dataset, a lack of indexing on the filtering column (status) results in a full table scan, which can be slow for large tables.  (Solved)
+The most likely performance issue is that the status column is not indexed. When filtering a large dataset, a lack of indexing on the filtering column (status) results in a full table scan, which can be slow for large tables. so, I added status column in the employee table and Add an Index on the status Column,  the database can quickly locate the rows where the status is 'active' without scanning the entire table. This will speed up the query since the database will use the index to find matching rows instead of scanning every row.
 
 
 Task 5: Palindrome Checker
-
 In this task, you need to write a PHP function that checks if a given string is a palindrome. A palindrome is a sequence of characters that reads the same forwards and backwards, ignoring spaces, punctuation, and case sensitivity.
 
 For example:
